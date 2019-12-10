@@ -22,10 +22,16 @@ $("#currentDay").append(today);
 //     $(".row time-block" ).addClass("past");
 
 // }
+function updatePastPresent(){
 
-$(".saveBtn").click(function() {
+
+}
+
+$("button").click(function() {
     console.log("clicked save button");
-    console.log("button id" + this.id);
+    var clickedBtn= $(this).attr("id")
+    console.log("button id" + clickedBtn);
+    console.log("#textarea-"+clickedBtn);
     // push(this.value)
     
 });
