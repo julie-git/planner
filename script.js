@@ -24,7 +24,7 @@ $("#currentDay").append(today);
 var presentHour =  moment().format('HH');
 console.log(presentHour);
 
- presentHour= 15;
+ 
 updateCalendar();
 
 
@@ -38,14 +38,8 @@ function updateCalendar(){
     for (var h=9; h < presentHour;  h++ ){
         
         console.log("updateCal past hour=" + h);
-        //add class to the textarea depending on if the hour is in the past or present
-        // if (h===presentHour){
-        //     $("#textarea-" + presentHour).addClass( "present" );
-        // }else{
-            // console.log("updatecal: inside if loop !ptHour");
-            // var hString = h.toString();
-            $("#textarea-" + h).addClass("past");
-        }
+        $("#textarea-" + h).addClass("past");
+    }
      
 
      //update future hours
