@@ -32,23 +32,27 @@ updateCalendar();
 function updateCalendar(){
 
     //update present hour
-    // $("#textarea-" + presentHour).addClass( "present" );
+     $("#textarea-" + presentHour).addClass( "present" );
         
     //update past hours
-    for (var h=9; h < 18;  h++ ){
+    for (var h=9; h < presentHour;  h++ ){
         
-        console.log("updateCal hour=" + h);
+        console.log("updateCal past hour=" + h);
         //add class to the textarea depending on if the hour is in the past or present
-        if (h===presentHour){
-            $("#textarea-" + presentHour).addClass( "present" );
-        }else{
-            console.log("updatecal: inside if loop !presentHour");
+        // if (h===presentHour){
+        //     $("#textarea-" + presentHour).addClass( "present" );
+        // }else{
+            // console.log("updatecal: inside if loop !ptHour");
             // var hString = h.toString();
             $("#textarea-" + h).addClass("past");
         }
+     
 
-        
-    }
+     //update future hours
+     for (var h= presentHour +1; h < 18; h++ ){
+        console.log("updateCal future hour=" + h);
+        $("#textarea-" + h).addClass("future");
+     }
 
     //get tasks out of local storage and refresh the page
     Object.keys(localStorage).forEach(function(key){
