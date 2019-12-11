@@ -24,8 +24,7 @@ $("#currentDay").append(today);
 var presentHour =  moment().format('HH');
 console.log(presentHour);
 
-$("#textarea-" + 9).addClass("past");
-
+ presentHour= 15;
 updateCalendar();
 
 
@@ -54,7 +53,7 @@ function updateCalendar(){
 
 
 
-$("button").click(function() {
+$("button").click(function(){
     console.log("clicked save button");
     var clickedBtn= $(this).attr("id")
     
@@ -64,5 +63,9 @@ $("button").click(function() {
     
 });
 
+
+// $("#btnSubmit").click(function(){
+//     alert("button");
+// });
 
 });
