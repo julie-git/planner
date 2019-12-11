@@ -23,7 +23,8 @@ $("#currentDay").append(today);
 
 var presentHour =  moment().format('HH');
 console.log(presentHour);
-
+presentHour = presentHour.replace(/^[0]+/g,"");
+console.log(presentHour);
  
 updateCalendar();
 
@@ -34,6 +35,7 @@ function updateCalendar(){
     //update present hour
      $("#textarea-" + presentHour).addClass( "present" );
         
+    
     //update past hours
     for (var h=9; h < presentHour;  h++ ){
         
@@ -43,6 +45,13 @@ function updateCalendar(){
      
 
      //update future hours
+     var prenum = presentHour+1
+    console.log("inside update" + prenum);
+    //convert presenthour to anumber
+    presentHour = parseInt(presentHour, 10)
+    var tempNum =presentHour+1;
+    console.log("inside update after convert" +tempNum);
+
      for (var h= presentHour +1; h < 18; h++ ){
         console.log("updateCal future hour=" + h);
         $("#textarea-" + h).addClass("future");
