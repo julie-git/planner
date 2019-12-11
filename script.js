@@ -21,15 +21,43 @@ $("#currentDay").append(today);
 //     console.log("renderpast");
 //     $(".row time-block" ).addClass("past");
 
-// }
-function updatePastPresent(){
+var presentHour =  moment().format('HH');
+console.log(presentHour);
+
+$("#textarea-" + 9).addClass("past");
+
+updateCalendar();
+
+
+//update the present and past hour changes the textbox color accordingly by adding a class to the textarea tag
+function updateCalendar(){
+
+    //update present hour
+    // $("#textarea-" + presentHour).addClass( "present" );
+        
+    //update past hours
+    for (var h=9; h < 18;  h++ ){
+        
+        console.log("updateCal hour=" + h);
+        //add class to the textarea depending on if the hour is in the past or present
+        if (h===presentHour){
+            $("#textarea-" + presentHour).addClass( "present" );
+        }else{
+            console.log("updatecal: inside if loop !presentHour");
+            // var hString = h.toString();
+            $("#textarea-" + h).addClass("past");
+        }
+    }
 
 
 }
 
+
+
 $("button").click(function() {
     console.log("clicked save button");
     var clickedBtn= $(this).attr("id")
+    
     console.log("button id" + clickedBtn);
     console.log("#textarea-"+clickedBtn);
     // push(this.value)
