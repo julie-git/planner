@@ -46,10 +46,22 @@ function updateCalendar(){
             // var hString = h.toString();
             $("#textarea-" + h).addClass("past");
         }
+
+        
     }
+
+    //get tasks out of local storage and refresh the page
+    Object.keys(localStorage).forEach(function(key){
+        console.log(" ls task = " + localStorage.getItem(key));
+        var task = localStorage.getItem(key);
+        console.log("ls key" + key);
+        $("#textarea-" + key).val(task);
+     });
 
 
 }
+
+
 
 
 
@@ -59,7 +71,10 @@ $("button").click(function(){
     
     console.log("button id" + clickedBtn);
     console.log("#textarea-"+clickedBtn);
-    // push(this.value)
+    var task = $("#textarea-" + clickedBtn).val();
+    console.log(task);
+    //save to local storage
+    localStorage.setItem(clickedBtn,task);
     
 });
 
