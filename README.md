@@ -16,4 +16,4 @@ Near the top of the calendar, the application should display the current day. Ad
 
 The client side APi  [Moment.js](https://momentjs.com/) was used to render the date/times.
 
-[Day Planner](dayplanner.jpg)
+![Day Planner](dayplanner.jpg)
